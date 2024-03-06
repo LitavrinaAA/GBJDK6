@@ -10,17 +10,16 @@ public class User {
     @Getter
     private int userDoor;
 
-    public int selectDoor() {
+    public void selectDoor() {
         userDoor = generator.nextInt(3)+1;
-        return userDoor;
+
     }
 
-    public int changeDoor(int door1, int door2) {
+    public void changeDoor(int door1, int door2) {
 
         if (yesOrNo()) {
              userDoor = generator.nextBoolean() ? door1 : door2;
         }
-        return userDoor;
     }
 
     public boolean yesOrNo() {
