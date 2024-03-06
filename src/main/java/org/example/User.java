@@ -15,7 +15,7 @@ public class User {
 
     }
 
-    public void changeDoor(int otherDoor) {
+    public void randomizeDecisionChangeDoorOrNo(int otherDoor) {
 
         if (generator.nextBoolean()) {
              userDoor = otherDoor;
