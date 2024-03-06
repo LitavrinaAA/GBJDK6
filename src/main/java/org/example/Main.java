@@ -5,10 +5,10 @@ import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
-        boolean wantToPlay = true;
-        Map<Integer, Boolean> statistica = new HashMap();
+//        boolean wantToPlay = true;
+        Map<Integer, Boolean> statistica = new HashMap<>();
         int count = 0;
-        while (wantToPlay) {
+        while (count < 1000) {
             count++;
             Game game = new Game();
             User user = new User();
@@ -26,10 +26,9 @@ public class Main {
             user.changeDoor(game.getOtherDoor(), game.getPrizeDoor());
             statistica.put(count, game.resultOfGame(user.getUserDoor()));
             System.out.println("хотите еще сиграть?");
-            if (user.yesOrNo() != 'y') {
-                wantToPlay = false;
-            }
+
         }
+
 
 
     }
