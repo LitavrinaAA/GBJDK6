@@ -27,8 +27,8 @@ public class Main {
                 .collect(Collectors.groupingBy(Boolean::booleanValue, Collectors.counting()));
 
         // Вывод количества значений true и false
-        System.out.println("Количество значений true: " + counts.getOrDefault(true, 0L));
-        System.out.println("Количество значений false: " + counts.getOrDefault(false, 0L));
+        System.out.println("Количество побед: " + counts.getOrDefault(true, 0L));
+        System.out.println("Количество поражений: " + counts.getOrDefault(false, 0L));
 
     }
 
