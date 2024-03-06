@@ -15,8 +15,6 @@ public class Game {
     @Getter private int otherDoor;
     Random generator = new Random();
 
-    public Game() {
-    }
     public void refreshDoors() {
         List<Integer> doors = new ArrayList<>(List.of(1, 2, 3));
         Collections.shuffle(doors, generator);
