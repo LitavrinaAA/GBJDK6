@@ -16,15 +16,9 @@ public class User {
     }
 
     public void changeDoor(int door1, int door2) {
-
-        if (yesOrNo()) {
+        if (generator.nextBoolean()) {
              userDoor = generator.nextBoolean() ? door1 : door2;
         }
     }
 
-    public boolean yesOrNo() {
-
-        return  generator.nextBoolean();
-
-    }
 }
