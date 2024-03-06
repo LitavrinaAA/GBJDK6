@@ -11,7 +11,6 @@ public class User {
 
     public int selectDoor() {
         userDoor = sc.nextInt();
-
         return userDoor;
     }
 
@@ -27,7 +26,8 @@ public class User {
         }
         return userDoor;
     }
-    public char yesOrNo(){
+
+    public char yesOrNo() {
         char userReply = sc.next().charAt(0);
         while (userReply != 'y' && userReply != 'n') {
             //Validation

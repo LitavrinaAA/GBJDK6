@@ -1,6 +1,7 @@
 package org.example;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,13 +24,12 @@ public class Main {
             game.dialogue(user.getUserDoor());
             //Может поменяет дверь
             user.changeDoor(game.getOtherDoor(), game.getPrizeDoor());
-            statistica.put(count,game.resultOfGame(user.getUserDoor()));
+            statistica.put(count, game.resultOfGame(user.getUserDoor()));
             System.out.println("хотите еще сиграть?");
             if (user.yesOrNo() != 'y') {
                 wantToPlay = false;
             }
         }
-
 
 
     }
