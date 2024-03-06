@@ -9,11 +9,11 @@ public class Main {
 
         Map<Integer, Boolean> statistica = new HashMap<>();
         int count = 0;
+        Game game = new Game();
+        User user = new User();
         while (count < 1000) {
             count++;
-            Game game = new Game();
-            User user = new User();
-
+            game.refreshDoors();
             // Begin Game
 
             user.selectDoor();

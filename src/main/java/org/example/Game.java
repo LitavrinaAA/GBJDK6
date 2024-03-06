@@ -13,11 +13,12 @@ public class Game {
     private int prizeDoor;
     @Getter private int openDoor;
     @Getter private int otherDoor;
+    Random generator = new Random();
 
     public Game() {
-        Random generator = new Random();
+    }
+    public void refreshDoors() {
         List<Integer> doors = new ArrayList<>(List.of(1, 2, 3));
-
         Collections.shuffle(doors, generator);
 
         prizeDoor = doors.get(0);
