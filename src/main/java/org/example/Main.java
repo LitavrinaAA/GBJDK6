@@ -2,10 +2,11 @@ package org.example;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
-//        boolean wantToPlay = true;
+
         Map<Integer, Boolean> statistica = new HashMap<>();
         int count = 0;
         while (count < 1000) {
@@ -16,20 +17,20 @@ public class Main {
             // Begin Game
 
             user.selectDoor();
-            while (!game.askSelectDoor(user.getUserDoor())) {
-                user.selectDoor();
-            }
 
-
-            game.dialogue(user.getUserDoor());
-            //Может поменяет дверь
+            //Может  поменяет дверь?
             user.changeDoor(game.getOtherDoor(), game.getPrizeDoor());
             statistica.put(count, game.resultOfGame(user.getUserDoor()));
-            System.out.println("хотите еще сиграть?");
 
         }
+        Map<Boolean, Long> counts = statistica.values().stream()
+                .collect(Collectors.groupingBy(Boolean::booleanValue, Collectors.counting()));
 
-
+        // Вывод количества значений true и false
+        System.out.println("Количество значений true: " + counts.getOrDefault(true, 0L));
+        System.out.println("Количество значений false: " + counts.getOrDefault(false, 0L));
 
     }
+
+
 }
