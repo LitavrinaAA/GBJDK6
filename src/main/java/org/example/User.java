@@ -15,10 +15,12 @@ public class User {
 
     }
 
-    public void changeDoor(int door1, int door2) {
+    public void changeDoor(int otherDoor) {
+
         if (generator.nextBoolean()) {
-             userDoor = generator.nextBoolean() ? door1 : door2;
+             userDoor = otherDoor;
         }
     }
+
 
 }

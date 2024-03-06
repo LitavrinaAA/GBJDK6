@@ -13,15 +13,11 @@ public class Main {
         User user = new User();
         while (count < 1000) {
             count++;
-            game.refreshDoors();
-            // Begin Game
-
+            game.putPrize();
             user.selectDoor();
-
-            //Может  поменяет дверь?
-            user.changeDoor(game.getOtherDoor(), game.getPrizeDoor());
+            game.openDoor(user.getUserDoor());
+            user.changeDoor(game.getOtherDoor());
             statistica.put(count, game.resultOfGame(user.getUserDoor()));
-
         }
         Map<Boolean, Long> counts = statistica.values().stream()
                 .collect(Collectors.groupingBy(Boolean::booleanValue, Collectors.counting()));
